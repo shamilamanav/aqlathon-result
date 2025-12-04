@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selected Candidates - Aqlathon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --card-bg: #161b22;
+            --text-white: #ffffff;
+            --accent-cyan: #00DCFF;
+            --badge-bg: rgba(0, 220, 255, 0.1);
+            --border-color: rgba(48, 54, 61, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* BANNER CONTAINER */
+        .banner-container {
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .banner-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            /* Placeholder background if image breaks */
+            background: linear-gradient(90deg, #2a0e4b, #140822); 
+            min-height: 200px; 
+            object-fit: cover;
+        }
+
+        /* SECTION TITLE */
+        .section-title {
+            color: var(--accent-cyan);
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            text-shadow: 0 0 20px rgba(0, 220, 255, 0.3);
+            text-align: center;
+        }
+
+        /* GRID LAYOUT */
+        .candidates-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 Columns like design */
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* CARD STYLE */
+        .candidate-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 140px;
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0; /* Start hidden for animation */
+        }
+
+        /* Stagger animation for cards */
+        .candidate-card:nth-child(1) { animation-delay: 0.1s; }
+        .candidate-card:nth-child(2) { animation-delay: 0.15s; }
+        .candidate-card:nth-child(3) { animation-delay: 0.2s; }
+        .candidate-card:nth-child(4) { animation-delay: 0.25s; }
+        .candidate-card:nth-child(5) { animation-delay: 0.3s; }
+        .candidate-card:nth-child(6) { animation-delay: 0.35s; }
+        .candidate-card:nth-child(7) { animation-delay: 0.4s; }
+        .candidate-card:nth-child(8) { animation-delay: 0.45s; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .candidate-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 5px 20px rgba(0, 220, 255, 0.15);
+        }
+
+        .c-name {
+            color: var(--text-white);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .c-id {
+            background-color: var(--badge-bg);
+            color: var(--accent-cyan);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 5px 15px;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+            display: inline-block;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .candidates-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .candidates-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .candidates-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. BANNER SECTION -->
+    <div class="banner-container">
+        <!-- REPLACE 'your-banner-url.jpg' with your actual image URL -->
+        <img src="WhatsApp Image 2025-12-04 at 9.15.46 PM.jpeg" alt="Results Banner" class="banner-img" id="banner-img">
+    </div>
+
+    <!-- 2. TITLE -->
+    <h2 class="section-title">Selected Candidates</h2>
+
+    <!-- 3. CARDS GRID -->
+    <div class="candidates-grid">
+
+        <!-- Card 1 -->
+        <div class="candidate-card">
+            <div class="c-name">Mohammed Javvad</div>
+            <div class="c-id">AQL071</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="candidate-card">
+            <div class="c-name">Mohammed Hashir Kalathil</div>
+            <div class="c-id">AQL059</div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="candidate-card">
+            <div class="c-name">Muhammed Munavir MP</div>
+            <div class="c-id">AQL119</div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="candidate-card">
+            <div class="c-name">Sinan</div>
+            <div class="c-id">AQL183</div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="candidate-card">
+            <div class="c-name">Ajeer</div>
+            <div class="c-id">AQL019</div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="candidate-card">
+            <div class="c-name">Ahmed Mubarak K A</div>
+            <div class="c-id">AQL017</div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="candidate-card">
+            <div class="c-name">Muhammed Musthafa PK</div>
+            <div class="c-id">AQL087</div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="candidate-card">
+            <div class="c-name">Muhammed Sinan P</div>
+            <div class="c-id">AQL147</div>
+        </div>
+
+
+
+
+         <!-- Card 8 -->
+        <div class="candidate-card">
+            <div class="c-name">Muhammed Fazil K</div>
+            <div class="c-id">AQL084</div>
+        </div>
+
+         <!-- Card 8 -->
+        <div class="candidate-card">
+            <div class="c-name">Muhammad idrees</div>
+            <div class="c-id">AQL085</div>
+        </div>
+
+         <!-- Card 8 -->
+        <div class="candidate-card">
+            <div class="c-name">Farhan Abdulla E</div>
+            <div class="c-id">AQL034</div>
+        </div>
+
+         <!-- Card 8 -->
+        <div class="candidate-card">
+            <div class="c-name">Muhammad Rabeeh</div>
+            <div class="c-id">AQL088</div>
+        </div>
+
+         <!-- Card 8 -->
+        <div class="candidate-card">
+            <div class="c-name">Muhammad Abdul Saleem</div>
+            <div class="c-id">AQL083</div>
+        </div>
+
+         <!-- Card 8 -->
+        <div class="candidate-card">
+            <div class="c-name">Muhammad Salah K</div>
+            <div class="c-id">AQL093</div>
+        </div>
+
+         <!-- Card 8 -->
+        <div class="candidate-card">
+            <div class="c-name">Jasim</div>
+            <div class="c-id">AQL046</div>
+        </div>
+
+        
+        
+    </div>
+
+    <!-- CONFETTI SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        window.onload = function() {
+            // Duration of the splash in milliseconds
+            var duration = 4 * 1000;
+            var animationEnd = Date.now() + duration;
+            var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            var interval = setInterval(function() {
+                var timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+
+                var particleCount = 50 * (timeLeft / duration);
+                
+                // Blast from left
+                confetti(Object.assign({}, defaults, { 
+                    particleCount, 
+                    origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } 
+                }));
+                
+                // Blast from right
+                confetti(Object.assign({}, defaults, { 
+                    particleCount, 
+                    origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } 
+                }));
+            }, 250);
+
+            // Also trigger a central burst immediately for impact
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        };
+    </script>
+
+</body>
+</html>
